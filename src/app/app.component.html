@@ -1,0 +1,119 @@
+<div class="hero-image">
+	<div class="header-text">
+		<br>
+		<h1>Cocktail House</h1>
+	</div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+	    <form #userForm="ngForm" novalidate>
+	        <div class="container">
+
+			<!--Row one-->
+			    <div class="row"> 
+
+            		<!--Alchoholic beverage-->
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Alcoholic Beverages</label>
+									<select class="custom-select" name="alcoholic" [(ngModel)]="alcoholic">
+										<option [ngValue]="Alcoholic_Beverage">Any</option>
+										<option>Gin</option>
+										<option>Whisky</option>
+										<option>Vodka</option>
+									</select>
+							</div>
+						</div>
+
+	        		<!--Smoothness-->
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Smoothness</label>
+								<select class="custom-select" name="Smoothness" [(ngModel)]="smoothness">
+										<option>Any</option>
+									<option>High_Smoothness</option>
+									<option>Low_Smoothness</option>
+								</select>
+							</div>
+						</div>
+
+            		<!--Country-->
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Country</label>
+								<select class="custom-select" name="Country" [(ngModel)]="country">
+										<option>Any</option>
+									<option>Asia</option>
+									<option>America</option>
+									<option>Europe</option>
+								</select>
+							</div>
+						</div>
+
+					<!--Price-->
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Price Range</label>
+							<select class="custom-select" name="Price" [(ngModel)]="price">
+									<option>Any</option>
+								<option>Budget</option>
+								<option>Expensive</option>
+							</select>
+						</div>
+					</div>
+                </div>
+
+			
+			<!--Second Row -->
+				<div class="row">
+					<div class="form-group search-btn">
+						<label class="col-md-6 control-label" for="singlebutton">Find</label>
+						<div class="col-md-6">
+						  <button id="singlebutton" name="singlebutton" (click)="cocktailDetails()" class="btn btn-primary">Search for a Cocktail</button>
+						</div>
+					  </div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="container">
+		<div class="card"  >
+			<h2>Cocktail Details</h2>
+            <p>No amount of physical contact could match the healing powers of a well made cocktail</p>
+
+			<table style="width:100%">
+				<tr>
+					<th>Name</th>
+					<th>Base Alcohol</th> 
+					<th>Secondary Alcohol</th>
+					<th>Softner</th>
+					<th>Straw</th>
+					<th>Deco</th>
+					<th>Glass</th>
+					
+				</tr>
+
+				<tr *ngFor ="let x of resultList">
+					<td>{{x.name}}</td>
+					<td>{{x.basealcohol}}</td>
+					<td>{{x.secondaryalcohol}}</td>
+					<td>{{x.softner}}</td>
+					<td>{{x.straw}}</td>
+					<td>{{x.deco}}</td>
+					<td>{{x.glass}}</td>
+				</tr>
+			
+			</table>
+		</div>
+
+
+		<!--footer-->
+		<footer>
+			<br><br><br><br>
+			<p>This  was done by the Team60 as a group project for Sementic web and Ontological modeling. </p>
+		  </footer>
+</div>
